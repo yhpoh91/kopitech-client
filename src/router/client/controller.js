@@ -85,7 +85,10 @@ const resetSecret = async (req, res, next) => {
     const { clientId } = req.params;
     const clientSecret = uuid();
     await clientService.updateSecret(clientId, { secret: clientSecret }, true);
-    res.status(200).send();
+
+    // Get Updated Client
+    const client = await clientService.getClient(clientId, true, false);
+    res.status(200).json(client);
   } catch (error) {
     next(error);
   }
