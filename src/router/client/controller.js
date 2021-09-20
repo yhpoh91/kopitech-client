@@ -2,7 +2,6 @@ const { v4: uuid } = require('uuid');
 
 const { L } = require('../../services/logger')('Client Router');
 const clientService = require('../../services/client');
-const hashService = require('../../services/hash');
 
 const listClients = async (req, res, next) => {
   try {
