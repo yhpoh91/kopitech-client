@@ -1,11 +1,19 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    const createExamplesTable = () => queryInterface.createTable('Examples', {
+    const createClientsTable = () => queryInterface.createTable('Clients', {
       id: {
         type: Sequelize.STRING(45),
         allowNull: false,
         unique: true,
         primaryKey: true,
+      },
+      name: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      secret: {
+        type: Sequelize.STRING(45),
+        allowNull: false,
       },
       deleted: {
         type: Sequelize.INTEGER,
@@ -23,11 +31,12 @@ module.exports = {
     });
 
     return Promise.resolve()
-      .then(createExamplesTable);
+      .then(createClientsTable);
   },
   down: (queryInterface) => {
-    const dropExamplesTable = () => queryInterface.dropTable('Examples');
+    const dropClientsTable = () => queryInterface.dropTable('Clients');
+
     return Promise.resolve()
-      .then(dropExamplesTable);
+      .then(dropClientsTable);
   },
 };

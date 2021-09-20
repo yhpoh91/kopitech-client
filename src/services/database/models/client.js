@@ -1,9 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
-  const Example = sequelize.define('Example', {
+  const Client = sequelize.define('Client', {
     id: {
       type: DataTypes.STRING(45),
       allowNull: false,
       primaryKey: true,
+    },
+    name: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+    },
+    secret: {
+      type: DataTypes.STRING(45),
+      allowNull: false,
     },
     deleted: {
       type: DataTypes.INTEGER,
@@ -14,9 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
   });
 
-  Example.associate = (models) => {
+  Client.associate = (models) => {
     // associations can be defined here
   };
 
-  return Example;
+  return Client;
 };
