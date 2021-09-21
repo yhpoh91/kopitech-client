@@ -73,6 +73,7 @@ const authenticate = async (req, res, next) => {
 
     // Ensure authorization header is present
     if (authenticationEnabled) {
+      L.debug('Checking auth header');
       const authorizationHeader = req.headers['authorization'];
       if (authorizationHeader == null) {
         res.status(401).send('invalid authorization header');
@@ -92,8 +93,10 @@ const authenticate = async (req, res, next) => {
     // Validate Token
     let hasAccess = !authenticationEnabled;
     if (!hasAccess) {
+      L.debug('Validating Token');
       const { ok: isValidated, payload } = await validateToken(token);
       if (isValidated && payload) {
+        L.debug('Token is Valid');
         const { sub, typ } = payload;
 
         hasAccess = true;
