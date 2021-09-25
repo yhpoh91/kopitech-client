@@ -30,7 +30,7 @@
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
     "kopitech-authentication-client": "^1.0.5",
-    "log4js": "^6.3.0",
+    "kopitech-logger": "^1.0.0",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.19.2",

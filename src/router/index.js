@@ -2,7 +2,7 @@ const express = require('express');
 
 const clientRouter = require('./client');
 
-const { L } = require('../services/logger')('Global Router');
+const { L } = require('kopitech-logger')('Global Router');
 
 const router = express.Router({ mergeParams: true });
 

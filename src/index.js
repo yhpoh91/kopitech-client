@@ -9,7 +9,7 @@ Promise = require('bluebird');
 
 const exceptionHandler = require('./services/exceptionHandler');
 const globalRouter = require('./router');
-const { L } = require('./services/logger')('App');
+const { L } = require('kopitech-logger')('App');
 
 const port = process.env.PORT || 8080;
 const requestMaxSize = '150mb';

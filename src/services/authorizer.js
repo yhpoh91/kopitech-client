@@ -1,4 +1,4 @@
-const { L } = require('./logger')('Authorizer');
+const { L } = require('kopitech-logger')('Authorizer');
 
 const authorize = (allowedRoles = []) => async (req, res, next) => {
   try {

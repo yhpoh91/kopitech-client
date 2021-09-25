@@ -1,5 +1,5 @@
 const jsonwebtoken = require('jsonwebtoken');
-const { L } = require('./logger')('Token Service');
+const { L } = require('kopitech-logger')('Token Service');
 
 const earlyTokenRefreshSeconds = parseInt(process.env.SELF_TOKEN_EARLY_REFRESH_SECONDS || '30', 10);
 const authenticatorLoginServiceUrl = process.env.AUTHENTICATOR_SERVICE_LOGIN_SERVICE_URL;

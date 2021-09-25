@@ -1,6 +1,6 @@
 const { v4: uuid } = require('uuid');
 
-const { L } = require('../../services/logger')('Client Router');
+const { L } = require('kopitech-logger')('Client Router');
 const clientService = require('../../services/client');
 
 const listClients = async (req, res, next) => {

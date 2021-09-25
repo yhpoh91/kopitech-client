@@ -2,7 +2,7 @@ const { v4: uuid } = require('uuid');
 const { Op } = require('sequelize');
 
 const { Client } = require('./database');
-const { L } = require('./logger')('Client Service');
+const { L } = require('kopitech-logger')('Client Service');
 
 
 const mapClient = (rawClient, removeSensitive = true) => {

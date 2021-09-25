@@ -1,4 +1,4 @@
-const { L } = require('./logger')('Exception Handler');
+const { L } = require('kopitech-logger')('Exception Handler');
 
 function ExampleException(message) {
   this.name = 'ExampleException';

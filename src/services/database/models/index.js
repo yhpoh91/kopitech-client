@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { L } = require('../../logger')('Database Model Service');
+const { L } = require('kopitech-logger')('Database Model Service');
 
 const getModels = (sequelizeClient) => {
   const fileNames = fs.readdirSync(path.resolve(__dirname));
