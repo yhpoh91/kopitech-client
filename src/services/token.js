@@ -2,9 +2,9 @@ const jsonwebtoken = require('jsonwebtoken');
 const { L } = require('./logger')('Token Service');
 
 const earlyTokenRefreshSeconds = parseInt(process.env.SELF_TOKEN_EARLY_REFRESH_SECONDS || '30', 10);
+const authenticatorLoginServiceUrl = process.env.AUTHENTICATOR_SERVICE_LOGIN_SERVICE_URL;
 const selfClientId = process.env.CLIENT_ID;
 const selfClientSecret = process.env.CLIENT_SECRET;
-const authenticatorLoginServiceUrl = process.env.AUTHENTICATOR_SERVICE_LOGIN_SERVICE_URL;
 
 
 let currentSelfToken;

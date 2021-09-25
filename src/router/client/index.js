@@ -3,51 +3,51 @@ const validate = require('express-validation');
 const validator = require('./validation');
 const controller = require('./controller');
 
-const authenticator = require('../../services/authenticator');
+const authenticationClient = require('kopitech-authentication-client');
 
 const router = express.Router({ mergeParams: true });
 
 router.route('/')
   .get(
-    authenticator.authenticate,
+    authenticationClient.expressAuthenticate,
     validate(validator.listClients),
     controller.listClients,
   )
   .post(
-    authenticator.authenticate,
+    authenticationClient.expressAuthenticate,
     validate(validator.createClient),
     controller.createClient,
   );
 
 router.route('/search')
   .post(
-    authenticator.authenticate,
+    authenticationClient.expressAuthenticate,
     validate(validator.searchClients),
     controller.searchClients,
   );
 
 router.route('/authenticate')
   .post(
-    authenticator.authenticate,
+    authenticationClient.expressAuthenticate,
     validate(validator.authenticateClient),
     controller.authenticateClient,
   );
 
 router.route('/:clientId/reset')
   .put(
-    authenticator.authenticate,
+    authenticationClient.expressAuthenticate,
     validate(validator.resetSecret),
     controller.resetSecret,
   );
 
 router.route('/:clientId')
   .get(
-    authenticator.authenticate,
+    authenticationClient.expressAuthenticate,
     validate(validator.getClient),
     controller.getClient,
   )
   .delete(
-    authenticator.authenticate,
+    authenticationClient.expressAuthenticate,
     validate(validator.deleteClient),
     controller.deleteClient,
   );
